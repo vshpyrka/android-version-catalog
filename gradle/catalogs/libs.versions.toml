@@ -1,0 +1,80 @@
+[versions]
+core-ktx = "1.12.0"
+appcompat = "1.6.1"
+material = "1.10.0"
+transitions = "1.5.0-alpha05"
+navigation = "2.7.5"
+glide = "4.16.0"
+swiperefreshlayout = "1.1.0"
+window = "1.2.0"
+security-crypto = "1.1.0-alpha06"
+startup = "1.1.1"
+lifecycle-viewmodel-ktx = "2.6.2"
+lifecycle-extensions = "2.2.0"
+work-manager = "2.9.0"
+constraintlayout = "2.1.4"
+activity-ktx = "1.8.2"
+fragment-ktx = "1.6.2"
+shortcuts = "1.1.0"
+coroutines = "1.7.3"
+hilt = "2.49"
+paging = "3.2.1"
+datastore = "1.0.0"
+protobuf = "3.24.0"
+grpc = "1.54.1"
+serialization = "1.6.2"
+kotlin = "1.9.21"
+tracing = "1.2.0"
+
+[libraries]
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+transitions = { module = "androidx.transition:transition-ktx", version.ref = "transitions" }
+navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
+swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
+window = { module = "androidx.window:window", version.ref = "window" }
+security-crypto = { module = "androidx.security:security-crypto", version.ref = "security-crypto" }
+startup = { module = "androidx.startup:startup-runtime", version.ref = "startup" }
+lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle-viewmodel-ktx" }
+lifecycle-extensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycle-extensions" }
+work-manager-runtime-ktx = { module = "androidx.work:work-runtime", version.ref = "work-manager" }
+work-manager-multiprocess = { module = "androidx.work:work-multiprocess", version.ref = "work-manager" }
+constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity-ktx" }
+fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragment-ktx" }
+shortcuts = { module = "androidx.core:core-google-shortcuts", version.ref = "shortcuts" }
+coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+hilt-android-core = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
+datastore = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
+tracing = { module = "androidx.tracing:tracing-ktx", version.ref = "tracing" }
+
+
+#  find latest version number here:
+#  https://mvnrepository.com/artifact/com.google.protobuf/protobuf-javalite
+protobuf-lite = { module = "com.google.protobuf:protobuf-javalite", version.ref = "protobuf" }
+protobuf-compiler = { module = "com.google.protobuf:protoc", version.ref = "protobuf" }
+protobuf-kotlin = { module = "com.google.protobuf:protobuf-kotlin-lite", version.ref = "protobuf" }
+
+grpc-gen = { module = "io.grpc:protoc-gen-grpc-java", version.ref = "grpc" }
+grpc-okhttp = { module = "io.grpc:grpc-okhttp", version.ref = "grpc" }
+grpc-protobuf = { module = "io.grpc:grpc-protobuf-lite", version.ref = "grpc" }
+grpc-stub = { module = "io.grpc:grpc-stub", version.ref = "grpc" }
+
+kotlin-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+
+# https://github.com/google/protobuf-gradle-plugin/blob/master/examples/exampleKotlinDslProject/src/main/proto/io/grpc/testing/integration/test.proto
+[bundles]
+grpc = [
+    "grpc-okhttp",
+    "grpc-protobuf",
+    "grpc-stub"
+]
+[plugins]
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
