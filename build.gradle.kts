@@ -22,13 +22,23 @@ subprojects {
     }
 
     publishing {
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/vshpyrka/android-version-catalog")
+                credentials {
+                    username = System.getenv("ACTOR")
+                    password = System.getenv("PUBLISH_TOKEN")
+                }
+            }
+        }
         afterEvaluate {
             publications {
                 create<MavenPublication>("maven") {
                     pom {
-                        name.set("VersionCatalog")
+                        name.set("android-version-catalog")
                         description.set("Android Version Catalog Example")
-                        url.set("https://www.google.com")
+                        url.set("https://github.com/vshpyrka/android-version-catalog")
                         licenses {
                             // licensing info
                             license {
