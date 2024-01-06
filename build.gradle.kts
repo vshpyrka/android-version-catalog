@@ -27,8 +27,8 @@ subprojects {
                 name = "GitHubPackages"
                 url = uri("https://maven.pkg.github.com/vshpyrka/android-version-catalog")
                 credentials {
-                    username = System.getenv("ACTOR")
-                    password = System.getenv("PUBLISH_TOKEN")
+                    username = System.getenv("GITHUB_ACTOR")
+                    password = System.getenv("GITHUB_PUBLISH_TOKEN")
                 }
             }
         }
