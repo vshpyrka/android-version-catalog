@@ -15,7 +15,7 @@ coroutines-test = "1.7.3"
 mockk = "1.13.9"
 paging = "3.2.1"
 work-manager = "2.9.0"
-hilt = "2.49"
+hilt = "2.50"
 
 [libraries]
 junit = { module = "junit:junit", version.ref = "junit" }
