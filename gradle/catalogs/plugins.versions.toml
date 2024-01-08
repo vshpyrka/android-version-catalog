@@ -2,7 +2,7 @@
 gradle = "8.2.0"
 kotlin = "1.9.21"
 navigation = "2.7.5"
-hilt = "2.49"
+hilt = "2.50"
 protobuf = "0.9.4"
 
 [plugins]
