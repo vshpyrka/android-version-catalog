@@ -2,13 +2,13 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    ":dependencyDashboard",
-    ":automergeAll"
+    ":dependencyDashboard"
   ],
+  "automerge": true,
+  "automergeStrategy": "squash",
   "baseBranches": [
     "main"
   ],
-  "assignees": ["vshpyrka"],
   "repositories": [
     "vshpyrka/android-version-catalog"
   ],
@@ -24,7 +24,7 @@
       "description": "Automatically merge minor and patch-level updates",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true,
-      "automergeType": "pr",
+      "automergeType": "main",
       "platformAutomerge": true
     },
     {

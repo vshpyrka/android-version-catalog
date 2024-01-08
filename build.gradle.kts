@@ -7,6 +7,7 @@ repositories {
     mavenLocal()
     mavenCentral()
     google()
+    gradlePluginPortal()
 }
 
 subprojects {
@@ -61,7 +62,7 @@ subprojects {
 
                     group = "com.vshpyrka.android"
                     artifactId = "version-catalog-${project.name}"
-                    version = "0.0.1"
+                    version = System.getenv("PACKAGE_VERSION")
                     from(components["versionCatalog"])
                 }
             }

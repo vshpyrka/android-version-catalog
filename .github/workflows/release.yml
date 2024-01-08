@@ -1,25 +1,66 @@
-name: Release
+name: Version
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
-  release:
-    types: [ published ]
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
 
 jobs:
-  publish-package:
-    name: Publish Github Package
+  release:
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+    name: release
     runs-on: ubuntu-latest
     env:
       GITHUB_PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
       GITHUB_ACTOR: ${{ secrets.ACTOR }}
-    if: github.event_name == 'release'
+      GRADLE_OPTS: -Dorg.gradle.daemon=false
     steps:
-      - name: Checkout the code
-        uses: actions/checkout@v4
+      - uses: actions/checkout
         with:
           fetch-depth: 0
+
+      - name: Get New Version
+        id: get_new_version
+        run: |
+          previous_tag=$(git describe --abbrev=0 --tags)
+          version_number=$(echo "$previous_tag" | sed 's/v//')
+          IFS='.' read -ra version_parts <<< "$version_number"
+          version_parts[-1]=$((version_parts[-1]+1))
+          new_version="${version_parts[0]}.${version_parts[1]}.${version_parts[2]}"
+          echo $previous_tag
+          echo $new_version
+          echo previous_tag=$previous_tag >> $GITHUB_OUTPUT;
+          echo tag=$new_version >> $GITHUB_OUTPUT;
+
+      - name: Create Release
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create v${{ steps.get_new_version.outputs.tag }} \
+          --target ${{ github.ref_name }} \
+          --generate-notes --notes-start-tag "steps.get_new_version.outputs.previous_tag"
+
       - name: Setup JDK
         uses: actions/setup-java@v4
         with:
-            distribution: 'zulu'
-            java-version: '17'
+          distribution: 'zulu'
+          java-version: '17'
+
       - name: Publish
-        run: ./gradlew publish
+        env:
+          PACKAGE_VERSION: ${{ steps.get_new_version.outputs.tag }}
+        run: |
+          echo PACKAGE_VERSION=$PACKAGE_VERSION
+          ./gradlew publish
