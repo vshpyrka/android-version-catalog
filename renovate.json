@@ -2,17 +2,57 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
+    ":dependencyDashboard",
     ":automergeAll"
   ],
   "baseBranches": [
     "main"
   ],
-  "assignees": [
-    "vshpyrka"
-  ],
+  "assignees": ["vshpyrka"],
   "repositories": [
     "vshpyrka/android-version-catalog"
   ],
   "platform": "github",
-  "gitAuthor": "Renovate Bot <bot@renovateapp.com>"
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "branchPrefix": "renovate/",
+  "semanticCommits": "enabled",
+  "prConcurrentLimit": 0,
+  "prCommitsPerRunLimit": 0,
+  "branchConcurrentLimit": 0,
+  "packageRules": [
+    {
+      "description": "Automatically merge minor and patch-level updates",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    },
+    {
+      "matchFileNames": [
+        "gradle/catalogs/libs.versions.toml"
+      ],
+      "groupName": "Libs",
+      "addLabels": [
+        "libs"
+      ]
+    },
+    {
+      "matchFileNames": [
+        "gradle/catalogs/plugins.versions.toml"
+      ],
+      "groupName": "Plugins",
+      "addLabels": [
+        "plugins"
+      ]
+    },
+    {
+      "matchFileNames": [
+        "gradle/catalogs/test.versions.toml"
+      ],
+      "groupName": "TestLibs",
+      "addLabels": [
+        "test-libs"
+      ]
+    }
+  ]
 }
