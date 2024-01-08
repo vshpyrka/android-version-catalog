@@ -1,25 +1,61 @@
-name: Release
+name: Version
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
-  release:
-    types: [ published ]
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
 
 jobs:
-  publish-package:
-    name: Publish Github Package
+  release:
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+    name: release
     runs-on: ubuntu-latest
     env:
       GITHUB_PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
       GITHUB_ACTOR: ${{ secrets.ACTOR }}
-    if: github.event_name == 'release'
+      GRADLE_OPTS: -Dorg.gradle.daemon=false
     steps:
-      - name: Checkout the code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Get previous tag
+        id: get_previous_tag
+        run: echo tag=$(git describe --abbrev=0 --tags) >> $GITHUB_OUTPUT;
+
+      - name: Create new tag
+        id: create_tag
+        run: |
+          previous_tag="${{ steps.get_previous_tag.outputs.tag }}"
+          version_number=$(echo "$previous_tag" | sed 's/v//')
+          IFS='.' read -ra version_parts <<< "$version_number"
+          version_parts[-1]=$((version_parts[-1]+1))
+          new_version="${version_parts[0]}.${version_parts[1]}.${version_parts[2]}"
+          echo $previous_tag
+          echo $new_version
+          git tag "v$new_version"
+          git push origin "v$new_version"
+          echo tag=$new_version >> $GITHUB_OUTPUT;
       - name: Setup JDK
         uses: actions/setup-java@v4
         with:
-            distribution: 'zulu'
-            java-version: '17'
+          distribution: 'zulu'
+          java-version: '17'
+
       - name: Publish
-        run: ./gradlew publish
+        env:
+          PACKAGE_VERSION: ${{ steps.create_tag.outputs.tag }}
+        run: |
+          echo PACKAGE_VERSION=$PACKAGE_VERSION
+          ./gradlew publish
