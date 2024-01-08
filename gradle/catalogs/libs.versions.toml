@@ -23,7 +23,7 @@ datastore = "1.0.0"
 protobuf = "3.24.0"
 grpc = "1.54.1"
 serialization = "1.6.2"
-kotlin = "1.9.21"
+kotlin = "1.9.22"
 tracing = "1.2.0"
 
 [libraries]
