@@ -25,11 +25,13 @@ grpc = "1.60.1"
 serialization = "1.6.2"
 kotlin = "1.9.22"
 tracing = "1.2.0"
+recyclerview = "1.3.2"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
+recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 transitions = { module = "androidx.transition:transition-ktx", version.ref = "transitions" }
 navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
 navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
