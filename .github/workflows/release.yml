@@ -26,14 +26,20 @@ jobs:
       GITHUB_ACTOR: ${{ secrets.ACTOR }}
       GRADLE_OPTS: -Dorg.gradle.daemon=false
     steps:
-      - uses: actions/checkout
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Get Previous Version
+        id: get_previous_version
+        run: |
+          previous_tag=$(git describe --abbrev=0 --tags)
+          echo previous_tag=$previous_tag >> $GITHUB_OUTPUT;
 
       - name: Get New Version
         id: get_new_version
         run: |
-          previous_tag=$(git describe --abbrev=0 --tags)
+          previous_tag=${{ steps.get_previous_version.outputs.previous_tag }}
           version_number=$(echo "$previous_tag" | sed 's/v//')
           IFS='.' read -ra version_parts <<< "$version_number"
           version_parts[-1]=$((version_parts[-1]+1))
@@ -48,9 +54,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          previous_tag=${{ steps.get_previous_version.outputs.previous_tag }}
+          echo $previous_tag
           gh release create v${{ steps.get_new_version.outputs.tag }} \
           --target ${{ github.ref_name }} \
-          --generate-notes --notes-start-tag "steps.get_new_version.outputs.previous_tag"
+          --generate-notes --notes-start-tag "${previous_tag}"
 
       - name: Setup JDK
         uses: actions/setup-java@v4
