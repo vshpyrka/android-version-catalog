@@ -4,8 +4,6 @@
     "config:recommended",
     ":dependencyDashboard"
   ],
-  "automerge": true,
-  "automergeStrategy": "squash",
   "baseBranches": [
     "main"
   ],
@@ -25,7 +23,6 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true,
       "automergeType": "branch",
-      "platformAutomerge": true
     },
     {
       "matchFileNames": [
