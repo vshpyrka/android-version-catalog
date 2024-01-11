@@ -1,4 +1,4 @@
-name: Version
+name: Release
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
