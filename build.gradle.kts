@@ -62,7 +62,7 @@ subprojects {
 
                     group = "com.vshpyrka.android"
                     artifactId = "version-catalog-${project.name}"
-                    version = System.getenv("PACKAGE_VERSION")
+                    version = System.getenv("PACKAGE_VERSION") ?: "100.0.0"
                     from(components["versionCatalog"])
                 }
             }
