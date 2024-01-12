@@ -21,6 +21,7 @@
     {
       "description": "Automatically merge minor and patch-level updates",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchCurrentVersion": "!/^0/",
       "automerge": true,
       "automergeType": "branch"
     },
