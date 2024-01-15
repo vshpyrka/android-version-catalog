@@ -17,6 +17,7 @@
   "prConcurrentLimit": 0,
   "prCommitsPerRunLimit": 0,
   "branchConcurrentLimit": 0,
+  "ignoreTests": true,
   "packageRules": [
     {
       "description": "Automatically merge minor and patch-level updates",
