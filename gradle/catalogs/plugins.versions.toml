@@ -1,7 +1,7 @@
 [versions]
-gradle = "8.2.0"
+gradle = "8.2.1"
 kotlin = "1.9.22"
-navigation = "2.7.5"
+navigation = "2.7.6"
 hilt = "2.50"
 protobuf = "0.9.4"
 
