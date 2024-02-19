@@ -35,8 +35,12 @@ jobs:
         run: |
           number_of_diff_commits=$(git rev-list --count HEAD ^$(git describe --abbrev=0 --tags))
           echo $number_of_diff_commits
-          has_changes=$(($number_of_diff_commits != 0 ? true : false))
-          echo $has_changes
+          if [ $number_of_diff_commits != 0 ]; then
+              has_changes=0
+          else
+              has_changes=1
+          fi
+          echo "Has changes $has_changes"
           echo has_changes=$has_changes >> $GITHUB_OUTPUT;
 
       - name: Get Previous Version
