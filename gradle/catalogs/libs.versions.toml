@@ -11,6 +11,7 @@ security-crypto = "1.1.0-alpha06"
 startup = "1.1.1"
 lifecycle-viewmodel-ktx = "2.7.0"
 lifecycle-extensions = "2.2.0"
+lifecycle-compose = "2.7.0"
 work-manager = "2.9.0"
 constraintlayout = "2.1.4"
 activity-ktx = "1.8.2"
@@ -72,6 +73,7 @@ compose-activity = { module = "androidx.activity:activity-compose", version.ref 
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose-foundation" }
 compose-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose-tooling" }
 compose-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose-tooling" }
+lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-compose" }
 
 #  find latest version number here:
 #  https://mvnrepository.com/artifact/com.google.protobuf/protobuf-javalite
