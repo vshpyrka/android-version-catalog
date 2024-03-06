@@ -33,7 +33,6 @@ compose-material-icons = "1.6.1"
 compose-activity = "1.8.2"
 compose-foundation = "1.6.2"
 compose-tooling = "1.6.2"
-compose-test = "1.6.2"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
@@ -73,8 +72,6 @@ compose-activity = { module = "androidx.activity:activity-compose", version.ref 
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose-foundation" }
 compose-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose-tooling" }
 compose-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose-tooling" }
-compose-test-junit = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose-test" }
-compose-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose-test" }
 
 #  find latest version number here:
 #  https://mvnrepository.com/artifact/com.google.protobuf/protobuf-javalite
