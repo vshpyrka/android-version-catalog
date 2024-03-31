@@ -15,7 +15,7 @@ coroutines-test = "1.8.0"
 mockk = "1.13.10"
 paging = "3.2.1"
 work-manager = "2.9.0"
-hilt = "2.51"
+hilt = "2.51.1"
 compose-test = "1.6.4"
 
 [libraries]
