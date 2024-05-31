@@ -2,7 +2,7 @@
 junit = "4.13.2"
 android-junit = "1.1.5"
 espresso = "3.5.1"
-espresso-device = "1.0.0-beta01"
+espresso-device = "1.0.0-rc01"
 truth = "1.4.2"
 uiautomator = "2.3.0"
 test-runner = "1.5.2"
