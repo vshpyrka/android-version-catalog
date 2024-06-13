@@ -10,13 +10,13 @@ test-rules = "1.5.0"
 navigation = "2.7.7"
 core-ktx = "1.5.0"
 core-testing = "2.2.0"
-fragment-testing = "1.7.1"
+fragment-testing = "1.8.0"
 coroutines-test = "1.8.1"
 mockk = "1.13.11"
 paging = "3.3.0"
 work-manager = "2.9.0"
 hilt = "2.51.1"
-compose-test = "1.6.7"
+compose-test = "1.6.8"
 
 [libraries]
 junit = { module = "junit:junit", version.ref = "junit" }
