@@ -35,6 +35,9 @@ compose-activity = "1.9.1"
 compose-foundation = "1.6.8"
 compose-tooling = "1.6.8"
 
+glance-appwidget = "1.1.0"
+glance-material = "1.1.0"
+
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
@@ -75,6 +78,9 @@ compose-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", v
 compose-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose-tooling" }
 lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-compose" }
 
+glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "glance-appwidget" }
+glance-material = { module = "androidx.glance:glance-material3", version.ref = "glance-material"}
+
 #  find latest version number here:
 #  https://mvnrepository.com/artifact/com.google.protobuf/protobuf-javalite
 protobuf-lite = { module = "com.google.protobuf:protobuf-javalite", version.ref = "protobuf" }
@@ -95,5 +101,4 @@ grpc = [
     "grpc-protobuf",
     "grpc-stub"
 ]
-[plugins]
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
