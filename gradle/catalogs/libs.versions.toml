@@ -76,6 +76,7 @@ compose-foundation = { module = "androidx.compose.foundation:foundation", versio
 compose-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose-tooling" }
 compose-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose-tooling" }
 lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-compose" }
+compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
 
 glance-appwidget = { group = "androidx.glance", name = "glance-appwidget", version.ref = "glance" }
 glance-material = { group = "androidx.glance", name = "glance-material3", version.ref = "glance" }
