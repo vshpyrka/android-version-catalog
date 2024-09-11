@@ -16,7 +16,7 @@ mockk = "1.13.12"
 paging = "3.3.2"
 work-manager = "2.9.1"
 hilt = "2.52"
-compose-test = "1.7.0"
+compose-test = "1.7.1"
 
 [libraries]
 junit = { module = "junit:junit", version.ref = "junit" }
