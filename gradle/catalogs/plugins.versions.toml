@@ -1,10 +1,10 @@
 [versions]
 gradle = "8.7.0"
-kotlin = "2.0.20"
+kotlin = "2.0.21"
 navigation = "2.8.2"
 hilt = "2.52"
 protobuf = "0.9.4"
-ksp = "2.0.20-1.0.25"
+ksp = "2.0.21-1.0.25"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
