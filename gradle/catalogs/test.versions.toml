@@ -7,7 +7,7 @@ truth = "1.4.4"
 uiautomator = "2.3.0"
 test-runner = "1.6.2"
 test-rules = "1.6.1"
-navigation = "2.8.2"
+navigation = "2.8.3"
 core-ktx = "1.6.1"
 core-testing = "2.2.0"
 fragment-testing = "1.8.4"
@@ -16,7 +16,7 @@ mockk = "1.13.13"
 paging = "3.3.2"
 work-manager = "2.9.1"
 hilt = "2.52"
-compose-test = "1.7.3"
+compose-test = "1.7.4"
 
 [libraries]
 junit = { module = "junit:junit", version.ref = "junit" }
