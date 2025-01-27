@@ -1,6 +1,6 @@
 [versions]
 gradle = "8.8.0"
-kotlin = "2.1.0"
+kotlin = "2.1.10"
 navigation = "2.8.5"
 hilt = "2.55"
 protobuf = "0.9.4"
