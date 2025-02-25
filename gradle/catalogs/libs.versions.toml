@@ -86,6 +86,8 @@ compose-navigation = { module = "androidx.navigation:navigation-compose", versio
 
 glance-appwidget = { group = "androidx.glance", name = "glance-appwidget", version.ref = "glance" }
 glance-material = { group = "androidx.glance", name = "glance-material3", version.ref = "glance" }
+glance-preview = { module = "androidx.glance:glance-preview", version.ref = "glance" }
+glance-appwidget-preview = { module = "androidx.glance:glance-appwidget-preview", version.ref = "glance" }
 
 #  find latest version number here:
 #  https://mvnrepository.com/artifact/com.google.protobuf/protobuf-javalite
