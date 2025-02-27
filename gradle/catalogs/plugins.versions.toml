@@ -1,7 +1,7 @@
 [versions]
-gradle = "8.8.1"
+gradle = "8.8.2"
 kotlin = "2.1.10"
-navigation = "2.8.7"
+navigation = "2.8.8"
 hilt = "2.55"
 protobuf = "0.9.4"
 ksp = "2.1.10-1.0.30"
