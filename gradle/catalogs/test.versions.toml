@@ -12,13 +12,13 @@ core-ktx = "1.6.1"
 core-testing = "2.2.0"
 fragment-testing = "1.8.8"
 coroutines-test = "1.10.2"
-mockk = "1.14.2"
+mockk = "1.14.3"
 paging = "3.3.6"
 work-manager = "2.10.2"
 hilt = "2.56.2"
 compose-test = "1.8.3"
 glance = "1.1.1"
-robolectric = "4.15"
+robolectric = "4.15.1"
 
 [libraries]
 junit = { module = "junit:junit", version.ref = "junit" }
