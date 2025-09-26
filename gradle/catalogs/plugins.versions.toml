@@ -2,7 +2,7 @@
 gradle = "8.13.0"
 kotlin = "2.2.20"
 navigation = "2.9.5"
-hilt = "2.57.1"
+hilt = "2.57.2"
 protobuf = "0.9.5"
 ksp = "2.2.20-2.0.3"
 
