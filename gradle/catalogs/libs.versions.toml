@@ -34,8 +34,8 @@ compose-material3 = "1.4.0"
 compose-material3-adaptive = "1.2.0"
 compose-material-icons = "1.7.8"
 compose-activity = "1.12.4"
-compose-foundation = "1.10.3"
-compose-tooling = "1.10.3"
+compose-foundation = "1.10.4"
+compose-tooling = "1.10.4"
 glance = "1.1.1"
 
 [libraries]
