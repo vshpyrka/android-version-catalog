@@ -1,5 +1,5 @@
 [versions]
-core-ktx = "1.18.0"
+core-ktx = "1.19.0"
 appcompat = "1.7.1"
 material = "1.14.0"
 transitions = "1.7.0"
