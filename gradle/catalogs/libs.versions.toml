@@ -2,8 +2,8 @@
 core-ktx = "1.19.0"
 appcompat = "1.8.0"
 material = "1.14.0"
-transitions = "1.7.0"
-navigation = "2.9.8"
+transitions = "1.7.1"
+navigation = "2.10.0"
 glide = "5.0.9"
 swiperefreshlayout = "1.2.0"
 window = "1.5.1"
@@ -36,7 +36,7 @@ compose-material-icons = "1.7.8"
 compose-activity = "1.13.0"
 compose-foundation = "1.12.0"
 compose-tooling = "1.12.0"
-glance = "1.1.1"
+glance = "1.2.0"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
