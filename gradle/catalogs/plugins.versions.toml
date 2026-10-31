@@ -4,7 +4,7 @@ kotlin = "2.4.21"
 navigation = "2.10.2"
 hilt = "2.60.1"
 protobuf = "0.10.0"
-ksp = "2.3.12"
+ksp = "2.3.13"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
