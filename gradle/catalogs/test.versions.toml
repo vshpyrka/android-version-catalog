@@ -16,7 +16,7 @@ mockk = "1.14.12"
 paging = "3.5.3"
 work-manager = "2.12.0"
 hilt = "2.60.1"
-compose-test = "1.12.1"
+compose-test = "1.13.0"
 glance = "1.2.0"
 robolectric = "4.18.1"
 
